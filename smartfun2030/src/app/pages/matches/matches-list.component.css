@@ -1,0 +1,107 @@
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+/* Zone des filtres */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.filters label {
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
+.filters select,
+.filters input {
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 140px;
+  font-size: 0.9rem;
+}
+
+/* Liste des cartes de matchs */
+.matches-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+/* Carte d'un match */
+.match-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.match-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #1a237e;
+}
+
+.match-card p {
+  margin: 0.1rem 0;
+  font-size: 0.9rem;
+}
+
+.match-card strong {
+  font-weight: 600;
+}
+
+/* Boutons */
+.match-card button {
+  margin-top: 0.6rem;
+  align-self: flex-start;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background-color: #1976d2;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.match-card button:hover {
+  background-color: #0d47a1;
+  transform: translateY(-1px);
+}
+
+/* Message d'erreur */
+div[style*="color:red"] {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive petit écran */
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filters label {
+    margin-right: 0.5rem;
+  }
+
+  .filters select,
+  .filters input {
+    width: 100%;
+    max-width: 260px;
+  }
+}

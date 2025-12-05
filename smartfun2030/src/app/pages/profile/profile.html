@@ -1,0 +1,83 @@
+<h1>Mon Profil</h1>
+
+<p><strong>Email :</strong> {{ email }}</p>
+<p><strong>Rôles :</strong> {{ roles.join(', ') }}</p>
+
+<hr>
+
+<!-- ===================== MES TICKETS ===================== -->
+<h2>🎟️ Mes Tickets</h2>
+
+<div *ngIf="loadingTickets">Chargement...</div>
+
+<div *ngIf="ticketError" class="error">{{ ticketError }}</div>
+
+<div *ngIf="myTickets.length === 0 && !loadingTickets">
+  Aucun ticket acheté pour le moment.
+</div>
+
+<ul>
+  <li *ngFor="let t of myTickets">
+    <b>{{ t.matchId }}</b> — {{ t.category }} —
+    {{ t.quantity }} places — {{ t.totalPrice }} DH
+    <br>
+    <small>Acheté le : {{ t.purchaseDate | date:'short' }}</small>
+  </li>
+</ul>
+
+<hr>
+
+<!-- ===================== FAVORIS ===================== -->
+<h2>⭐ Mes favoris</h2>
+
+<div *ngIf="loadingFavorites">Chargement favoris...</div>
+<div *ngIf="favoriteError" class="error">{{ favoriteError }}</div>
+
+<div *ngIf="favorites.length === 0 && !loadingFavorites">
+  Aucun favori.
+</div>
+
+<ul>
+  <li *ngFor="let f of favorites">
+    Match ID : {{ f.matchId }}
+
+    <button (click)="removeFavorite(f.matchId)" style="margin-left:10px;">
+      ❌ Retirer
+    </button>
+  </li>
+</ul>
+
+<hr>
+
+<!-- ===================== PANIER ===================== -->
+<h2>🛒 Mon Panier</h2>
+
+<div *ngIf="loadingCart">Chargement panier...</div>
+<div *ngIf="cartError" class="error">{{ cartError }}</div>
+
+<div *ngIf="cart.length === 0 && !loadingCart">
+  Panier vide.
+</div>
+
+<ul>
+  <li *ngFor="let c of cart">
+    Match {{ c.matchId }} — {{ c.category }}
+    — {{ c.quantity }} places — {{ c.unitPrice }} DH/place
+
+    <button (click)="removeCartItem(c.id)" style="margin-left:10px;">
+      Supprimer
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="cart.length > 0">
+  <h3>Total : {{ getCartTotal() }} DH</h3>
+
+  <button (click)="clearCart()">
+    Vider le panier
+  </button>
+
+  <button style="margin-left:10px; background:#28a745; color:white;">
+    Procéder au paiement (à implémenter)
+  </button>
+</div>

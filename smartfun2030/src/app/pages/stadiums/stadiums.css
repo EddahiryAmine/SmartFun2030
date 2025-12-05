@@ -1,0 +1,29 @@
+.filters {
+  margin-bottom: 1rem;
+}
+
+.stadium-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.stadium-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  background: #111827; /* tu peux adapter selon ton thème */
+  color: #f9fafb;
+}
+
+.stadium-card h3 {
+  margin-top: 0;
+}
+
+.stadium-card button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,52 @@
+<div class="purchase-container">
+
+  <h2>Achat d'un ticket</h2>
+
+  <p><strong>Match ID :</strong> {{ matchId }}</p>
+
+  <div *ngIf="loading">Chargement des places disponibles...</div>
+
+  <div *ngIf="!loading">
+
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="successMessage" class="success">
+      {{ successMessage }}
+    </div>
+
+    <p>
+      <strong>Places disponibles :</strong>
+      <span [ngClass]="{'no-seats': availability <= 0}">
+        {{ availability }}
+      </span>
+    </p>
+
+    <div class="form-group">
+      <label>Catégorie :</label>
+      <select [(ngModel)]="category">
+        <option value="NORMAL">Normal</option>
+        <option value="VIP">VIP</option>
+        <option value="VVIP">VVIP</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Quantité :</label>
+      <input
+        type="number"
+        [(ngModel)]="quantity"
+        min="1"
+        [max]="availability"
+      />
+    </div>
+
+    <button
+      (click)="onPurchase()"
+      [disabled]="availability <= 0"
+    >
+      Confirmer l'achat
+    </button>
+  </div>
+</div>

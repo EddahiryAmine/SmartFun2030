@@ -1,0 +1,25 @@
+h1 {
+  margin-bottom: 20px;
+}
+
+.profile-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+}
+
+.profile-section {
+  border: 1px dashed #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.ticket-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background-color: #fff;
+}

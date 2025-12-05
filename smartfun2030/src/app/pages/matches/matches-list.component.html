@@ -1,0 +1,109 @@
+<h1>Matchs de la Coupe du Monde 2030</h1>
+
+<div *ngIf="loading">Chargement...</div>
+
+<div *ngIf="!loading">
+
+  <div *ngIf="errorMessage" style="color:red">
+    {{ errorMessage }}
+  </div>
+
+  <!-- 🔹 Filtres -->
+  <div class="filters">
+
+    <label>Phase :</label>
+    <select [(ngModel)]="selectedPhase" (change)="applyFilters()">
+      <option value="ALL">Toutes</option>
+      <option value="GROUP">Phase de groupes</option>
+      <option value="ROUND_OF_16">Huitièmes</option>
+      <option value="QUARTER_FINAL">Quarts</option>
+      <option value="SEMI_FINAL">Demis</option>
+      <option value="THIRD_PLACE">3ᵉ place</option>
+      <option value="FINAL">Finale</option>
+    </select>
+
+    <label style="margin-left: 1rem;">Statut :</label>
+    <select [(ngModel)]="selectedStatus" (change)="applyFilters()">
+      <option value="ALL">Tous</option>
+      <option value="SCHEDULED">À venir</option>
+      <option value="LIVE">En cours</option>
+      <option value="FINISHED">Terminés</option>
+    </select>
+
+    <label style="margin-left: 1rem;">Pays :</label>
+    <select [(ngModel)]="selectedCountry" (change)="applyFilters()">
+      <option value="ALL">Tous</option>
+      <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
+    </select>
+
+    <label style="margin-left: 1rem;">Stade :</label>
+    <select [(ngModel)]="selectedStadium" (change)="applyFilters()">
+      <option value="ALL">Tous</option>
+      <option *ngFor="let s of stadiums" [value]="s">{{ s }}</option>
+    </select>
+
+    <label style="margin-left: 1rem;">Équipe :</label>
+    <input
+      type="text"
+      [(ngModel)]="searchTeam"
+      (input)="applyFilters()"
+      placeholder="Nom d'équipe..." />
+  </div>
+
+  <hr />
+
+  <!-- 🔹 Liste des matchs -->
+  <div class="matches-container">
+    <div class="match-card" *ngFor="let m of filteredMatches">
+
+      <h3>{{ m.homeTeam }} vs {{ m.awayTeam }}</h3>
+
+      <p>
+        <strong>Date :</strong>
+        {{ m.kickoff | date:'fullDate' }}
+        à
+        {{ m.kickoff | date:'shortTime' }}
+      </p>
+
+      <p>
+        <strong>Phase :</strong>
+{{ phaseLabel(m.phase) }}
+        <span *ngIf="m.groupName">
+          – {{ m.groupName }}
+        </span>
+      </p>
+
+      <p>
+        <strong>Statut :</strong>
+        {{ statusLabel(m.status) }}
+      </p>
+
+      <ng-container *ngIf="stadiumById[m.stadiumId] as st">
+        <p><strong>Stade :</strong> {{ st.name }}</p>
+        <p><strong>Lieu :</strong> {{ st.city }} ({{ st.country }})</p>
+      </ng-container>
+
+      <button [routerLink]="['/stadiums', m.stadiumId]">
+        Voir le stade
+      </button>
+
+     <button (click)="addFavorite(m.id)">
+  Ajouter aux favoris
+</button>
+
+<button (click)="addToCart(m.id)">
+  🛒 Ajouter au panier
+</button>
+
+
+<button
+  style="margin-left: 0.5rem;"
+  [routerLink]="['/tickets/acheter', m.id]"
+>
+  Acheter un ticket
+</button>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,46 @@
+<div *ngIf="loading">
+  Chargement du stade...
+</div>
+
+<div *ngIf="!loading && stadium; else errorTpl">
+
+  <h1>{{ stadium.name }}</h1>
+  <p><strong>Ville :</strong> {{ stadium.city }} ({{ stadium.country }})</p>
+  <p><strong>Capacité :</strong> {{ stadium.capacity | number }}</p>
+  <p>{{ stadium.description }}</p>
+
+  <h3>Images</h3>
+  <div class="img-grid">
+    <img *ngFor="let img of stadium.images" [src]="img" alt="stadium image">
+  </div>
+
+  <h3>Localisation</h3>
+  <div id="map"></div>
+<div style="margin-top: 10px;">
+  <button (click)="openInGoogleMaps()">
+    Ouvrir dans Google Maps
+  </button>
+
+  <button (click)="openItineraryFromUser()" style="margin-left: 10px;">
+    Itinéraire depuis ma position
+  </button>
+</div>
+  <h3>Matchs dans ce stade</h3>
+<ul>
+  <li *ngFor="let m of matches">
+    {{ m.homeTeam }} vs {{ m.awayTeam }} — {{ m.kickoff | date:'fullDate' }}
+
+    <button
+      style="margin-left: 0.5rem;"
+      [routerLink]="['/tickets/acheter', m.id]"
+    >
+      Acheter un ticket
+    </button>
+  </li>
+</ul>
+
+</div>
+
+<ng-template #errorTpl>
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+</ng-template>

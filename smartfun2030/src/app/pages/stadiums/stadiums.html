@@ -1,0 +1,38 @@
+<h1>Stades de la Coupe du Monde 2030 </h1>
+<div *ngIf="loading">Chargement des stades...</div>
+<div *ngIf="!loading">
+  <!-- ton grid avec *ngFor ici -->
+
+
+<div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+
+<div class="filters">
+  <label>Pays :</label>
+  <select [(ngModel)]="selectedCountry" (change)="applyFilters()">
+    <option value="ALL">Tous</option>
+    <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
+  </select>
+
+  <label style="margin-left: 1rem;">Recherche :</label>
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    (input)="applyFilters()"
+    placeholder="Nom du stade ou ville..." />
+</div>
+
+<hr />
+
+<div class="stadium-grid">
+  <div class="stadium-card" *ngFor="let s of filteredStadiums">
+    <h3>{{ s.name }}</h3>
+    <p><strong>Ville :</strong> {{ s.city }} ({{ s.country }})</p>
+    <p><strong>Capacité :</strong> {{ s.capacity | number }}</p>
+    <p>{{ s.description }}</p>
+
+    <button [routerLink]="['/stadiums', s.id]">
+      Voir détails
+    </button>
+  </div>
+</div>
+</div>

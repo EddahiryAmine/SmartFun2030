@@ -1,0 +1,11 @@
+.img-grid {
+  display: flex;
+  gap: 10px;
+}
+
+.img-grid img {
+  width: 200px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}

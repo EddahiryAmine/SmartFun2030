@@ -1,0 +1,33 @@
+<nav style="background:#f4f4f4; padding:12px; margin-bottom:20px; display:flex; align-items:center; gap:20px;">
+  
+  <span style="font-weight:bold; font-size:18px;">
+    SmartFun 2030
+  </span>
+
+  <a routerLink="/home">Accueil</a>
+  <a routerLink="/stadiums">Stades</a>
+  <a routerLink="/matches">Matchs</a>
+
+  <a *ngIf="auth.isLoggedIn()" routerLink="/tickets/my">Mes Tickets</a>
+
+  <a *ngIf="auth.hasRole('ADMIN')" routerLink="/admin" style="color:red;">
+    Admin
+  </a>
+
+  <span style="flex:1"></span>
+
+  <span *ngIf="auth.isLoggedIn()">
+      Connecté : <strong>{{ auth.getEmail() }}</strong> 
+      ({{ auth.hasRole('ADMIN') ? 'ADMIN' : 'USER' }})
+  </span>
+
+  <button *ngIf="auth.isLoggedIn()" (click)="auth.logout()">
+    Déconnexion
+  </button>
+
+  <button *ngIf="!auth.isLoggedIn()" routerLink="/login">
+    Connexion
+  </button>
+
+</nav>
+
