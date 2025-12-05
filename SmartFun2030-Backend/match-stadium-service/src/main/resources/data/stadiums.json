@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Grand Stade de Casablanca",
+    "city": "Casablanca",
+    "country": "Morocco",
+    "capacity": 115000,
+    "latitude": 33.5724,
+    "longitude": -7.6570,
+    "description": "Stade principal du Mondial 2030, ultramoderne et d'une capacité exceptionnelle.",
+    "images": [
+      "https://example.com/casablanca1.jpg",
+      "https://example.com/casablanca2.jpg"
+    ]
+  },
+  {
+    "name": "Stade Moulay Abdellah",
+    "city": "Rabat",
+    "country": "Morocco",
+    "capacity": 60000,
+    "latitude": 34.0181,
+    "longitude": -6.8356,
+    "description": "Stade olympique situé à Rabat, entièrement rénové pour le Mondial.",
+    "images": [
+      "https://example.com/rabat1.jpg"
+    ]
+  },
+  {
+    "name": "Stade Ibn Batouta",
+    "city": "Tangier",
+    "country": "Morocco",
+    "capacity": 65000,
+    "latitude": 35.7269,
+    "longitude": -5.9166,
+    "description": "Stade moderne de Tanger, déjà hôte de grands événements internationaux.",
+    "images": []
+  },
+  {
+    "name": "Stade de Marrakech",
+    "city": "Marrakech",
+    "country": "Morocco",
+    "capacity": 45000,
+    "latitude": 31.5989,
+    "longitude": -8.0219,
+    "description": "Stade emblématique de Marrakech, réputé pour son ambiance unique.",
+    "images": []
+  },
+  {
+    "name": "Stade Adrar",
+    "city": "Agadir",
+    "country": "Morocco",
+    "capacity": 45000,
+    "latitude": 30.3670,
+    "longitude": -9.5503,
+    "description": "Stade situé dans la région du Souss, prêt pour accueillir le Mondial.",
+    "images": []
+  },
+
+  {
+    "name": "Santiago Bernabéu",
+    "city": "Madrid",
+    "country": "Spain",
+    "capacity": 85000,
+    "latitude": 40.4531,
+    "longitude": -3.6883,
+    "description": "L'un des stades les plus connus au monde, rénové pour le Mondial.",
+    "images": []
+  },
+  {
+    "name": "Camp Nou",
+    "city": "Barcelona",
+    "country": "Spain",
+    "capacity": 105000,
+    "latitude": 41.3809,
+    "longitude": 2.1228,
+    "description": "Le plus grand stade d'Europe.",
+    "images": []
+  },
+  {
+    "name": "Estadio da Luz",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "capacity": 65000,
+    "latitude": 38.7528,
+    "longitude": -9.1847,
+    "description": "Stade mythique du Benfica Lisbonne.",
+    "images": []
+  },
+  {
+    "name": "Estádio do Dragão",
+    "city": "Porto",
+    "country": "Portugal",
+    "capacity": 50000,
+    "latitude": 41.1618,
+    "longitude": -8.5830,
+    "description": "Stade moderne à Porto.",
+    "images": []
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "homeTeam": "Morocco",
+    "awayTeam": "Spain",
+    "kickoff": "2030-06-12T21:00:00",
+    "stadiumName": "Grand Stade de Casablanca",
+    "status": "SCHEDULED",
+    "phase": "GROUP",
+    "groupName": "Groupe A"
+  },
+  {
+    "homeTeam": "Portugal",
+    "awayTeam": "Argentina",
+    "kickoff": "2030-06-13T18:00:00",
+    "stadiumName": "Stade Moulay Abdellah",
+    "status": "SCHEDULED",
+    "phase": "GROUP",
+    "groupName": "Groupe A"
+  },
+  {
+    "homeTeam": "Spain",
+    "awayTeam": "Argentina",
+    "kickoff": "2030-06-17T21:00:00",
+    "stadiumName": "Stade Ibn Batouta",
+    "status": "SCHEDULED",
+    "phase": "GROUP",
+    "groupName": "Groupe A"
+  },
+  {
+    "homeTeam": "Morocco",
+    "awayTeam": "Portugal",
+    "kickoff": "2030-06-20T21:00:00",
+    "stadiumName": "Stade de Marrakech",
+    "status": "SCHEDULED",
+    "phase": "GROUP",
+    "groupName": "Groupe A"
+  },
+
+  {
+    "homeTeam": "Brazil",
+    "awayTeam": "Germany",
+    "kickoff": "2030-06-14T20:00:00",
+    "stadiumName": "Santiago Bernabéu",
+    "status": "SCHEDULED",
+    "phase": "GROUP",
+    "groupName": "Groupe B"
+  },
+  {
+    "homeTeam": "France",
+    "awayTeam": "England",
+    "kickoff": "2030-06-15T18:00:00",
+    "stadiumName": "Camp Nou",
+    "status": "SCHEDULED",
+    "phase": "GROUP",
+    "groupName": "Groupe B"
+  },
+  {
+    "homeTeam": "Brazil",
+    "awayTeam": "France",
+    "kickoff": "2030-06-19T20:00:00",
+    "stadiumName": "Estadio da Luz",
+    "status": "SCHEDULED",
+    "phase": "SCHEDULED",
+    "phase": "GROUP",
+    "groupName": "Groupe B"
+  },
+  {
+    "homeTeam": "Germany",
+    "awayTeam": "England",
+    "kickoff": "2030-06-21T18:00:00",
+    "stadiumName": "Estádio do Dragão",
+    "status": "SCHEDULED",
+    "phase": "GROUP",
+    "groupName": "Groupe B"
+  },
+
+  {
+    "homeTeam": "1er Groupe A",
+    "awayTeam": "2e Groupe B",
+    "kickoff": "2030-06-26T21:00:00",
+    "stadiumName": "Grand Stade de Casablanca",
+    "status": "SCHEDULED",
+    "phase": "ROUND_OF_16",
+    "groupName": null
+  },
+  {
+    "homeTeam": "1er Groupe B",
+    "awayTeam": "2e Groupe A",
+    "kickoff": "2030-06-27T21:00:00",
+    "stadiumName": "Santiago Bernabéu",
+    "status": "SCHEDULED",
+    "phase": "ROUND_OF_16",
+    "groupName": null
+  },
+  {
+    "homeTeam": "Vainqueur Match 1",
+    "awayTeam": "Vainqueur Match 2",
+    "kickoff": "2030-07-02T21:00:00",
+    "stadiumName": "Grand Stade de Casablanca",
+    "status": "SCHEDULED",
+    "phase": "FINAL",
+    "groupName": null
+  }
+]
